@@ -5,12 +5,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Project {
-    private String projectID;
-    private String name;
-    private String description;
-    private String clientID;
-    private LocalDateTime lastUpdated;
-    private Map<String, Document> documents;
+    protected String projectID;
+    protected String name;
+    protected String description;
+    protected String clientID;
+    protected LocalDateTime lastUpdated;
+    protected Map<String, Document> documents;
+    protected Map<String, Email> emails;
 
     public Project(String projectID, String name, String description, String clientID) {
         this.projectID = projectID;
@@ -19,74 +20,29 @@ public class Project {
         this.clientID = clientID;
         this.lastUpdated = LocalDateTime.now();
         this.documents = new HashMap<>();
-    }
-
-    // Getters and setters for project attributes
-    public String getProjectID() {
-        return projectID;
-    }
-
-    public void setProjectID(String projectID) {
-        this.projectID = projectID;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getClientID() {
-        return clientID;
-    }
-
-    public void setClientID(String clientID) {
-        this.clientID = clientID;
-    }
-
-    public LocalDateTime getLastUpdated() {
-        return lastUpdated;
-    }
-
-    // Simplified getters and unimplemented methods
-    public Document getDocument(String documentID) {
-        return null; // Return null as per instruction
+        this.emails = new HashMap<>();
     }
 
     public void addDocument(Document document) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        documents.put(document.getDocumentID(), document);
     }
 
-    public void updateStatus() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void editDocument(String documentID, String newContent) {
+        if (documents.containsKey(documentID)) {
+            documents.get(documentID).editDocument(newContent);
+        }
     }
 
-    public void editDocument() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Document getDocument(String documentID) {
+        return documents.get(documentID);
     }
 
-    public void submitDocument() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void updateDocument(Document document) {
+        documents.put(document.getDocumentID(), document);
     }
 
-    public void updateDocument() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void submitDocument(Document document) {
+        documents.put(document.getDocumentID(), document);
     }
 
-    // Private helper method
-    private void updateLastUpdated() {
-        this.lastUpdated = LocalDateTime.now();
-    }
-
-    // Other existing methods...
 }

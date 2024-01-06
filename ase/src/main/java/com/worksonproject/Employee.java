@@ -1,9 +1,9 @@
 package com.worksonproject;
 
 public class Employee extends User {
-    private String accessLevel;
-    private BeenzAccount beenzAccount; // Ensure this matches the class name
-    private Biography biography; // Composition of Biography
+    protected String accessLevel;
+    protected BeenzAccount beenzAccount; // Ensure this matches the class name
+    protected Biography biography; // Composition of Biography
 
 
     // Constructor including Biography

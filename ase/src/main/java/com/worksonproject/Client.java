@@ -4,31 +4,13 @@ public class Client extends User {
     protected String companyName;
     protected String companyInfo;
 
-    // Constructor
+    // Constructor using 'super' to initialize inherited fields
     public Client(String userID, String name, String email, String password, String companyName, String companyInfo) {
         super(userID, name, email, password);
         this.companyName = companyName;
         this.companyInfo = companyInfo;
     }
 
-    // Getters and setters for companyName and companyInfo
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    public String getCompanyInfo() {
-        return companyInfo;
-    }
-
-    public void setCompanyInfo(String companyInfo) {
-        this.companyInfo = companyInfo;
-    }
-
-    // Implementations of abstract methods from User class
     @Override
     public void updateProfile() {
         throw new UnsupportedOperationException("Not supported yet.");
@@ -49,8 +31,6 @@ public class Client extends User {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    // Client-specific method
-    public void accessBiographies() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    // Getters and setters for companyName and companyInfo
+    // Other methods...
 }

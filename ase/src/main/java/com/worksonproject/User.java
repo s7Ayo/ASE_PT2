@@ -13,15 +13,22 @@ public abstract class User {
         this.email = email;
         this.password = password;
     }
-    // Abstract methods
+
+    // Abstract methods to be implemented by subclasses
     public abstract void updateProfile();
-    public abstract void login();
-    public abstract void logout();
-    public abstract void accessProject(String projectID);
 
+    public void login() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
+    public void logout() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
-    
+    public void accessProject(String projectID) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
     // Getters and setters
     public String getUserID() {
         return userID;
@@ -53,17 +60,5 @@ public abstract class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-
-    // Override toString for better readability
-    @Override
-    public String toString() {
-        return "User{" +
-               "userID='" + userID + '\'' +
-               ", name='" + name + '\'' +
-               ", email='" + email + '\'' +
-               ", password='" + password + '\'' +
-               '}';
     }
 }

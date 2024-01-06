@@ -1,73 +1,51 @@
 package com.worksonproject;
 import java.time.LocalDateTime;
 
-
-
-
 public class Document {
-    private String documentID;
-    private String projectID;
-    private String title;
-    private String docContent;
-    private LocalDateTime lastUpdated;
+    protected String documentID;
+    protected String projectID;
+    protected String title;
+    protected String docContent;
+    protected LocalDateTime lastUpdated;
 
     // Constructor
-    public Document(String documentID, String projectID, String title, String docContent) {
+    public Document(String documentID, String projectID, String title) {
         this.documentID = documentID;
         this.projectID = projectID;
         this.title = title;
-        this.docContent = docContent;
         this.lastUpdated = LocalDateTime.now();
     }
 
-    // Getters and setters
-    public String getDocumentID() {
-        return documentID;
+    public void createDocument() {
+        this.docContent = "";
+        this.lastUpdated = LocalDateTime.now();
     }
 
-    public void setDocumentID(String documentID) {
-        this.documentID = documentID;
+    public void editDocument(String newContent) {
+        this.docContent = newContent;
+        this.lastUpdated = LocalDateTime.now();
     }
 
-    public String getProjectID() {
-        return projectID;
+    public void deleteDocument() {
+        this.docContent = "";
+        this.lastUpdated = LocalDateTime.now();
     }
 
-    public void setProjectID(String projectID) {
-        this.projectID = projectID;
+    public String getContent() {
+        return this.docContent;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDocContent() {
-        return docContent;
-    }
-
-    public void setDocContent(String docContent) {
-        this.docContent = docContent;
+    public void setContent(String newContent) {
+        this.docContent = newContent;
+        this.lastUpdated = LocalDateTime.now();
     }
 
     public LocalDateTime getLastUpdated() {
-        return lastUpdated;
+        return this.lastUpdated;
     }
 
-    public void setLastUpdated(LocalDateTime lastUpdated) {
-        this.lastUpdated = lastUpdated;
+    // Method to get the document ID
+    public String getDocumentID() {
+        return this.documentID;
     }
-
-        public void setContent(String newContent) {
-            this.docContent = newContent;
-            // Update lastUpdated or other relevant fields
-        }
-    
-        // Existing methods...
-    
-    
-    // Existing methods...
 }
