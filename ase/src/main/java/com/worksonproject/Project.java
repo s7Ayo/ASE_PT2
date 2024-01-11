@@ -37,8 +37,13 @@ public class Project {
         return documents.get(documentID);
     }
 
-    public void updateDocument(Document document) {
-        documents.put(document.getDocumentID(), document);
+    public void updateDocumentContent(String documentID, String newContent) {
+        if (documents.containsKey(documentID)) {
+            Document doc = documents.get(documentID);
+            doc.editDocument(newContent); // Assuming editDocument method sets the new content
+        } else {
+            System.out.println("Document with ID " + documentID + " not found in project " + projectID);
+        }
     }
 
     public void submitDocument(Document document) {

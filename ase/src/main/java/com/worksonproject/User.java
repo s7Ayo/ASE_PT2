@@ -5,7 +5,7 @@ public abstract class User {
     protected String name;
     protected String email;
     protected String password;
-
+    protected boolean isLoggedIn;
     // Constructor
     public User(String userID, String name, String email, String password) {
         this.userID = userID;
@@ -16,14 +16,23 @@ public abstract class User {
 
     // Abstract methods to be implemented by subclasses
     public abstract void updateProfile();
+ 
 
-    public void login() {
-        throw new UnsupportedOperationException("Not supported yet.");
+      // Method to set the user as logged in
+      public void login() {
+        isLoggedIn = true;
     }
 
+    // Method to set the user as logged out
     public void logout() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        isLoggedIn = false;
     }
+
+    // Getter for isLoggedIn
+    public boolean isLoggedIn() {
+        return isLoggedIn;
+    }
+
 
     public void accessProject(String projectID) {
         throw new UnsupportedOperationException("Not supported yet.");

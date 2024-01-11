@@ -1,5 +1,7 @@
 package com.worksonproject;
 
+import java.util.Map;
+
 public interface KMS {
     void registerEmployee(Employee employee);
     void assignProject(Employee employee, Project project);
@@ -22,5 +24,7 @@ public interface KMS {
     void addBeenzToEmployee(Employee employee, int points);
     boolean redeemBeenzFromEmployee(Employee employee, int points);
     void createAndSendNotification(String notificationID, String content, User recipient);
+    void updateDocumentContent(String projectID, String documentId, String newContent);
 
 }
+
