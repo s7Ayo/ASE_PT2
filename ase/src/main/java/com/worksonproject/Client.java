@@ -11,26 +11,35 @@ public class Client extends User {
         this.companyInfo = companyInfo;
     }
 
+    // Implement a basic method to update client profile
     @Override
     public void updateProfile() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void login() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void logout() {
+        // Implement logic for updating client profile
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void accessProject(String projectID) {
+        // Logic for clients accessing a project, if different from other users
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     // Getters and setters for companyName and companyInfo
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getCompanyInfo() {
+        return companyInfo;
+    }
+
+    public void setCompanyInfo(String companyInfo) {
+        this.companyInfo = companyInfo;
+    }
+
     // Other methods...
 }

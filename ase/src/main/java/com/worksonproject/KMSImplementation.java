@@ -28,8 +28,11 @@ public class KMSImplementation implements KMS {
 
     @Override
     public void updateProject(Project project) {
-        // Placeholder implementation
-        throw new UnsupportedOperationException("Method not implemented yet.");
+        if (project != null && projects.containsKey(project.getProjectID())) {
+            projects.put(project.getProjectID(), project);
+        } else {
+            System.out.println("Project with ID " + project.getProjectID() + " not found or project is null.");
+        }
     }
 
     // Implement the updateDocumentContent as it's likely important for OCL
@@ -48,9 +51,8 @@ public class KMSImplementation implements KMS {
         throw new UnsupportedOperationException("Not implemented yet.");
     }
 
-    @Override
     public Project accessProject(String projectId) {
-        throw new UnsupportedOperationException("Not implemented yet.");
+        return projects.get(projectId);
     }
 
     @Override
@@ -107,10 +109,35 @@ public class KMSImplementation implements KMS {
         throw new UnsupportedOperationException("Not implemented yet.");
     }
 
-    @Override
     public void sendNotification(String message, User user) {
-        throw new UnsupportedOperationException("Not implemented yet.");
+        // Logic to send notification to the user
+        // For example, this could update a notification list, send an email, etc.
+        System.out.println("Notification sent to " + user.getName() + ": " + message);
     }
+
+    // Method to send notifications to both employee and client
+    public void sendNotificationsToEmployeeAndClient(String message, Employee employee, String projectId) {
+        // Send notification to the employee
+        sendNotification(message, employee);
+
+        // Retrieve client information based on projectId and send notification
+        // This is a placeholder logic; implement according to your system's design
+        User client = getClientFromProject(projectId);
+        if (client != null) {
+            sendNotification(message, client);
+        } else {
+            System.out.println("Client for project " + projectId + " not found.");
+        }
+    }
+
+    private User getClientFromProject(String projectId) {
+        Project project = projects.get(projectId);
+        if (project != null) {
+            return project.getClient();
+        }
+        return null; // Client not found or project does not exist
+    }
+
     public void manageBeenz(Employee employee, int points) {
         // Placeholder
         throw new UnsupportedOperationException("Not implemented yet.");
@@ -133,4 +160,5 @@ public class KMSImplementation implements KMS {
         // Placeholder
         throw new UnsupportedOperationException("Not implemented yet.");
     }
+
 }
