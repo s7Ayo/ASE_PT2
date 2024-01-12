@@ -8,7 +8,7 @@ public class Main {
         HashMap<String, Project> projectsMap = new HashMap<>();
 
         // Create a KMSImplementation instance with the projects map
-        final KMSImplementation kms = new KMSImplementation(projectsMap);
+         KMSImplementation kms = new KMSImplementation(projectsMap);
 
         // Create a ProjectManager instance
         ProjectManager projectManager = new ProjectManager();
