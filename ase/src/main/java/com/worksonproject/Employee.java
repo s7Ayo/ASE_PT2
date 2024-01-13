@@ -92,7 +92,7 @@ public class Employee extends User {
     public void updateContent(String projectID, String documentId, String newContent) {
         // Update content logic (e.g., edit project documents)
         workOnProject(projectID, documentId, newContent);
-        earnBeenz(10); // Example: Earning beenz points for updating content
+        ; // Example: Earning beenz points for updating content
     }
 
     public void earnBeenz(int points) {

@@ -3,9 +3,7 @@ package com.worksonproject;
 import java.util.Map;
 
 public interface KMS {
-    void registerEmployee(Employee employee);
     void assignProject(Employee employee, Project project);
-    void updateProject(Project project);
     void sendNotification(String message, User user);
     void manageBeenz(Employee employee, int points);
     void requestEditDocument(Employee employee, Document document);
@@ -15,16 +13,18 @@ public interface KMS {
     String documentDetails(Document document);
     void earnBeenz(Employee employee, int points);
     void editDocument(Employee employee, Document document, String newContent);
-    Project accessProject(String projectId);
     String accessBiographies();
     Employee searchEmployee(String employeeId);
     void updateEmployeeProfile(Employee employee);
-    void login(User user, String password);
-    void logout(User user);
-    void addBeenzToEmployee(Employee employee, int points);
-    boolean redeemBeenzFromEmployee(Employee employee, int points);
     void createAndSendNotification(String notificationID, String content, User recipient);
     void updateDocumentContent(String projectID, String documentId, String newContent);
-
+    void registerEmployee(Employee employee);
+    Project accessProject(String projectID);
+    void updateProject(Project project);
+    void sendNotificationsToEmployeeAndClient(String message, Employee employee, String projectID);
+    void addBeenzToEmployee(Employee employee, int points);
+    boolean redeemBeenzFromEmployee(Employee employee, int points);
+    void login(User user, String password);
+    void logout(User user);
 }
 

@@ -35,22 +35,22 @@ public class KMSImplementation implements KMS {
         }
     }
 
-    // Implement the updateDocumentContent as it's likely important for OCL
     @Override
     public void updateDocumentContent(String projectID, String documentId, String newContent) {
         Project project = projects.get(projectID);
         if (project != null) {
-            // Ensure that the Project class has a method called updateDocumentContent
             project.updateDocumentContent(documentId, newContent);
         } else {
             System.out.println("Project with ID " + projectID + " not found.");
         }
     }
 
+    @Override
     public void editDocument(Employee employee, Document document, String newContent) {
         throw new UnsupportedOperationException("Not implemented yet.");
     }
 
+    @Override
     public Project accessProject(String projectId) {
         return projects.get(projectId);
     }
@@ -100,6 +100,7 @@ public class KMSImplementation implements KMS {
         throw new UnsupportedOperationException("Not implemented yet.");
     }
 
+    @Override
     public void earnBeenz(Employee employee, int points) {
         throw new UnsupportedOperationException("Not implemented yet.");
     }
@@ -109,56 +110,58 @@ public class KMSImplementation implements KMS {
         throw new UnsupportedOperationException("Not implemented yet.");
     }
 
-    public void sendNotification(String message, User user) {
-        // Logic to send notification to the user
-        // For example, this could update a notification list, send an email, etc.
-        System.out.println("Notification sent to " + user.getName() + ": " + message);
-    }
-
-    // Method to send notifications to both employee and client
-    public void sendNotificationsToEmployeeAndClient(String message, Employee employee, String projectId) {
-        // Send notification to the employee
-        sendNotification(message, employee);
-
-        // Retrieve client information based on projectId and send notification
-        // This is a placeholder logic; implement according to your system's design
-        User client = getClientFromProject(projectId);
-        if (client != null) {
-            sendNotification(message, client);
-        } else {
-            System.out.println("Client for project " + projectId + " not found.");
-        }
-    }
-
-    private User getClientFromProject(String projectId) {
-        Project project = projects.get(projectId);
-        if (project != null) {
-            return project.getClient();
-        }
-        return null; // Client not found or project does not exist
-    }
-
-    public void manageBeenz(Employee employee, int points) {
-        // Placeholder
-        throw new UnsupportedOperationException("Not implemented yet.");
-    }
-
     @Override
-    public void requestEditDocument(Employee employee, Document document) {
-        // Placeholder
-        throw new UnsupportedOperationException("Not implemented yet.");
-    }
+    public
 
-    @Override
-    public void updateContent(Employee employee, Document document, String newContent) {
-        // Placeholder
-        throw new UnsupportedOperationException("Not implemented yet.");
-    }
+void sendNotification(String message, User user) {
+// Logic to send notification to the user
+System.out.println("Notification sent to " + user.getName() + ": " + message);
+}
 
-    @Override
-    public Document viewDocument(String documentId) {
-        // Placeholder
-        throw new UnsupportedOperationException("Not implemented yet.");
+@Override
+public void sendNotificationsToEmployeeAndClient(String message, Employee employee, String projectId) {
+    // Send notification to the employee
+    sendNotification(message, employee);
+
+    // Retrieve client information based on projectId and send notification
+    User client = getClientFromProject(projectId);
+    if (client != null) {
+        sendNotification(message, client);
+    } else {
+        System.out.println("Client for project " + projectId + " not found.");
     }
+}
+
+private User getClientFromProject(String projectId) {
+    Project project = projects.get(projectId);
+    if (project != null) {
+        return project.getClient();
+    }
+    return null; // Client not found or project does not exist
+}
+
+@Override
+public void manageBeenz(Employee employee, int points) {
+    // Placeholder
+    throw new UnsupportedOperationException("Not implemented yet.");
+}
+
+@Override
+public void requestEditDocument(Employee employee, Document document) {
+    // Placeholder
+    throw new UnsupportedOperationException("Not implemented yet.");
+}
+
+@Override
+public void updateContent(Employee employee, Document document, String newContent) {
+    // Placeholder
+    throw new UnsupportedOperationException("Not implemented yet.");
+}
+
+@Override
+public Document viewDocument(String documentId) {
+    // Placeholder
+    throw new UnsupportedOperationException("Not implemented yet.");
+}
 
 }

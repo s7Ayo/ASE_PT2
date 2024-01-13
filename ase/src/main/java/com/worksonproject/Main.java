@@ -8,12 +8,12 @@ public class Main {
         HashMap<String, Project> projectsMap = new HashMap<>();
 
         // Create a Client instance
-        Client client = new Client("clientID", "Client Name", "client@example.com", "password", "Client Company",
-                "Company Information");
+        Client client = new Client("YGOT", "Yoruichi Shihouin", "YGOT@example.com", " Gotei-1323YGOT", " Gotei 13",
+                "Corrections Corps Commander,\n" +"Executive Militia Corps Commander");
 
         // Create and add a project to the map
         String projectID = "project1";
-        Project projectToAdd = new Project(projectID, "Project Name", "Project Description", client);
+        Project projectToAdd = new Project(projectID, "TradeBot", "This project is about creating an AI-powered trading bot that uses machine learning to analyze financial markets and make autonomous trading decisions for profit maximization and risk minimization.", client);
         projectsMap.put(projectID, projectToAdd);
 
         // Create a document and add it to the project
@@ -68,7 +68,7 @@ public class Main {
         }
 
         // Employee works on a project's document
-        String newContent = "Updated content for the document.";
+        String newContent = "Gotei 13 Trading Bots are advanced AI systems designed for financial market trading, using predictive algorithms to analyze market trends and execute trades at optimal times. They operate continuously, capitalizing on opportunities from market openings across different time zones. These bots aim to maximize returns and minimize risks by adapting to changing market conditions in real-time.";
 
         // Updating the document content
         project.updateDocumentContent(documentID, newContent);
@@ -97,7 +97,7 @@ public class Main {
 
     private static Employee authenticateEmployee(String employeeID, String password, KMS kms) {
         // Placeholder for actual authentication
-        Employee employee = new Employee(employeeID, "John Doe", "john@example.com", password, "AccessLevel", 1, kms,
+        Employee employee = new Employee(employeeID, "Simon(Ayo) Kojo", "SAYO@example.com", password, "High", 1, kms,
                 null);
         employee.login(); // Ensure employee is logged in
         return employee;

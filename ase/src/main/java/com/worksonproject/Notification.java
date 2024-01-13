@@ -9,9 +9,10 @@ public class Notification {
         this.content = content;
     }
 
-    public void sendNotification() {
-        // Implementation of notification sending logic
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void sendNotification(String message, User user) {
+        // Logic to send notification to the user
+        // For example, this could update a notification list, send an email, etc.
+        System.out.println("Notification sent to " + user.getName() + ": " + message);
     }
 
     // Getters and setters can be added here
