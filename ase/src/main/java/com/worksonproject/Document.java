@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Document {
     protected String documentID;
-    protected String projectID;
+    public String projectID;
     protected String title;
     protected String docContent;
     protected LocalDateTime lastUpdated;
