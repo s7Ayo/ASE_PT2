@@ -39,7 +39,7 @@ public class KMSImplementation implements KMS {
     public void updateDocumentContent(String projectID, String documentId, String newContent) {
         Project project = projects.get(projectID);
         if (project != null) {
-            project.updateDocumentContent(documentId, newContent);
+            project.updateDocumentContent(documentId, newContent);  
         } else {
             System.out.println("Project with ID " + projectID + " not found.");
         }

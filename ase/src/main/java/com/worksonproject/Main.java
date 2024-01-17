@@ -86,7 +86,6 @@ public class Main {
         String notificationContent = "Updated document in project: " + projectID;
         kms.sendNotificationsToEmployeeAndClient(notificationContent, employee, projectID);
 
-        // Employee earns static points for each contribution
         int addedPoints = 10;
         employee.earnBeenz(addedPoints);
 

@@ -25,7 +25,6 @@ public class Employee extends User {
             Command updateCommand = new UpdateDocumentCommand(this.kms, projectID, documentId, newContent);
             this.projectManager.setCommand(updateCommand);
             this.projectManager.executeCommand();
-            earnBeenz(10); // Example: Earning beenz points for updating content
         } else {
             // Employee is not logged in, handle this situation appropriately
             // For example, throw an exception or return an error message
@@ -66,26 +65,15 @@ public class Employee extends User {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    // Employee-specific methods
-    public void updateContent() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 
-    public void earnbeenz() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+
 
     public void searchEmployee() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public void editDocument() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 
-    public void submitDocument() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+   
     
 
     // Employee-specific methods
